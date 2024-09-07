@@ -1,3 +1,18 @@
 from django.db import models
 
-# Create your models here.
+
+class Posts(models.Model):
+    title = models.CharField(max_length=50, null=False)
+    author = models.CharField(max_length=50, null=False)
+    content = models.TextField(max_length=400, default='')
+    created_at = models.DateField(auto_now=False, auto_now_add=False)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+    
+
+    class Meta:
+        verbose_name = "Post"
+        verbose_name_plural = 'Posts'
+        ordering = ['-created_at'] # newest post first
