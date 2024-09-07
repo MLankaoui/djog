@@ -9,3 +9,11 @@ body {
     color: orange !important;
     font-weight: 900 !important;
 }
+
+#read_more {
+    background-color: orange !important;
+}
+.article-section {
+    margin-top: 100px;
+}
+
