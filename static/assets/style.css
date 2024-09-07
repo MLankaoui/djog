@@ -1,0 +1,11 @@
+#nav {
+    background-color: black;
+}
+body {
+    background-color: blue;
+}
+
+.nav-link {
+    color: orange !important;
+    font-weight: 900 !important;
+}
