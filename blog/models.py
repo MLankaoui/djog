@@ -1,10 +1,12 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class Posts(models.Model):
     title = models.CharField(max_length=50, null=False)
     author = models.CharField(max_length=50, null=False)
-    content = models.TextField(max_length=400, default='')
+    content = RichTextField(null=True, blank=True)
+    # content = models.TextField(max_length=400, default='')
     created_at = models.DateField(auto_now=False, auto_now_add=False)
     updated_at = models.DateTimeField(auto_now=True)
     image = models.ImageField(upload_to='uploads', default='')
