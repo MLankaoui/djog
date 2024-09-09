@@ -6,10 +6,12 @@
     <div class="container article-section">
         <div class="left">{{post.created_at}}</div>
         <div class="right">
-            <h1 class="title"><a href="#" class="title-link">{{post.title}}</a></h1>
+            <h1 class="title">
+                <a href="{% url 'post_detail' post.pk %}" class="title-link">{{ post.title }}</a>
+            </h1>
             <p class="author">posted by: {{post.author}}</p>
             <p class="paragraph">{{post.content|truncatechars:20}}</h1>
-            <p><a href="#" class="read-more">read-more <i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
+             <p><a href="{% url 'post_detail' post.pk %}" class="read-more">read-more <i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
         </div>
         <hr>
     </div>
