@@ -10,7 +10,7 @@
                 <a href="{% url 'post_detail' post.pk %}" class="title-link">{{ post.title }}</a>
             </h1>
             <p class="author">posted by: {{post.author}}</p>
-            <p class="paragraph">{{post.content|truncatechars:20|safe}}</h1>
+            <p class="paragraph">{{post.content|truncatechars:60|safe}}</h1>
              <p><a href="{% url 'post_detail' post.pk %}" class="read-more">read-more <i class="fa fa-arrow-right" aria-hidden="true"></i></a></p>
         </div>
         <hr>
