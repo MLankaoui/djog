@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form_container">
+            {% for message in messages %}
+                <p class="alert alert-success">{{ message }}</p>
+            {% endfor  %}
+            <h2>Register</h2>
+
+            <!-- Username Field -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">{{ form.username.label }}</label>
+                {% if form.username.errors %}
+                    <!-- Display username errors -->
+                    <div class="alert alert-danger">
+                        {{ form.username.errors }}
+                    </div>
+                {% endif %}
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="username" placeholder="Daza" value="{{ form.username.value|default_if_none:'' }}">
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">{{ form.email.label }}</label>
+                {% if form.email.errors %}
+                    <!-- Display email errors -->
+                    <div class="alert alert-danger">
+                        {{ form.email.errors }}
+                    </div>
+                {% endif %}
+                <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="daza@example.com" value="{{ form.email.value|default_if_none:'' }}">
+            </div>
+
+            <!-- Password1 Field -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">{{ form.password1.label }}</label>
+                {% if form.password1.errors %}
+                    <!-- Display password1 errors -->
+                    <div class="alert alert-danger">
+                        {{ form.password1.errors }}
+                    </div>
+                {% endif %}
+                <input type="password" class="form-control" id="exampleFormControlInput1" name="password1" placeholder="xxxxxx">
+            </div>
+
+            <!-- Password2 Field -->
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">{{ form.password2.label }}</label>
+                {% if form.password2.errors %}
+                    <!-- Display password2 errors -->
+                    <div class="alert alert-danger">
+                        {{ form.password2.errors }}
+                    </div>
+                {% endif %}
+                <input type="password" class="form-control" id="exampleFormControlInput1" name="password2" placeholder="xxxxxx">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-warning">Create Account</button>
+            <p> already have an account? <a href="#">login</a></p>
+        </div>
+    </form>
+{% endblock content %}

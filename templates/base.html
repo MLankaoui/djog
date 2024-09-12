@@ -49,6 +49,12 @@
           margin-left: 25%;
           padding: 20px;
         }
+        .form_container {
+          margin-top: 100px;
+          color: white;
+          width: 50%;
+          margin-left: 25%;
+        }
     </style>
     
 </head>
@@ -75,7 +81,10 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
                     <button class="btn btn-outline-warning" type="submit">Search</button>
                 </form>
-            </div>
+                {% if not user.is_authentificated  %}
+                  <button class="btn btn-warning" > <a href="{% url 'register' %}" style="color:white;">signup</a> </button>
+                {% endif %}
+              </div>
         </div>
       </nav>
 
